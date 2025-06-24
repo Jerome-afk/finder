@@ -1,0 +1,44 @@
+{{template "base.html" .}}
+
+{{define "content"}}
+<div class="search-page">
+    <div class="search-header">
+        <h1>Search Movies & TV Shows</h1>
+        <div class="search-container">
+            <div class="search-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search for movies and TV shows..." 
+                       id="search-input" value="{{.query}}">
+            </div>
+        </div>
+    </div>
+
+    <div class="search-filters">
+        <div class="filter-tabs">
+            <button class="filter-tab active" data-type="all">All</button>
+            <button class="filter-tab" data-type="movie">Movies</button>
+            <button class="filter-tab" data-type="tv">TV Shows</button>
+        </div>
+    </div>
+
+    <div id="search-results">
+        {{if .query}}
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Searching...</p>
+        </div>
+        {{else}}
+        <div class="empty-state">
+            <i class="fas fa-search"></i>
+            <p>Enter a search term to find movies and TV shows</p>
+        </div>
+        {{end}}
+    </div>
+
+    <div id="pagination" class="pagination" style="display: none;"></div>
+</div>
+{{end}}
+
+{{define "scripts"}}
+<script src="/static/js/search.js"></script>
+{{end}}

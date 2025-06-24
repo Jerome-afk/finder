@@ -1,0 +1,54 @@
+{{template "base.html" .}}
+
+{{define "content"}}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Your Dashboard</h1>
+        <p>Welcome back! Here's your media tracking overview</p>
+    </div>
+
+    <div class="stats-grid" id="stats-grid">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading your stats...</p>
+        </div>
+    </div>
+
+    <div class="dashboard-sections">
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <div id="recent-watchlist" class="media-grid">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading recent activity...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations">
+            <h2>Recommendations</h2>
+            <div id="recommendations" class="media-grid">
+                <div class="loading-spinner">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading recommendations...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="dashboard-actions">
+        <a href="/search" class="btn btn-primary">
+            <i class="fas fa-search"></i>
+            Discover New Content
+        </a>
+        <a href="/dashboard/watchlist" class="btn btn-outline">
+            <i class="fas fa-list"></i>
+            View Full Watchlist
+        </a>
+    </div>
+</div>
+{{end}}
+
+{{define "scripts"}}
+<script src="/static/js/dashboard.js"></script>
+{{end}}

@@ -1,0 +1,48 @@
+{{template "base.html" .}}
+
+{{define "content"}}
+<div class="hero">
+    <h1>Discover Your Next Favorite</h1>
+    <p>Track movies and TV shows, manage your watchlist, and discover trending content</p>
+    <div class="search-container">
+        <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search for movies and TV shows..." id="main-search">
+        </div>
+    </div>
+</div>
+
+<section class="trending-section">
+    <h2>Trending Now</h2>
+    <div id="trending-content">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading trending content...</p>
+        </div>
+    </div>
+</section>
+
+<section class="popular-section">
+    <h2>Popular Movies</h2>
+    <div id="popular-movies" class="media-grid">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading popular movies...</p>
+        </div>
+    </div>
+</section>
+
+<section class="popular-section">
+    <h2>Popular TV Shows</h2>
+    <div id="popular-tv" class="media-grid">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading popular TV shows...</p>
+        </div>
+    </div>
+</section>
+{{end}}
+
+{{define "scripts"}}
+<script src="/static/js/home.js"></script>
+{{end}}
